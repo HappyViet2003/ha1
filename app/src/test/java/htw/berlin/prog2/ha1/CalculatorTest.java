@@ -88,7 +88,24 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    // Erster Grüner Test von Viet Anh Hoenemann 587778
+    @Test
+    @DisplayName("should display result after multiplying two negative numbers")
+    void testNegativeMultiplication() {
+        Calculator calc = new Calculator();
 
+        calc.pressDigitKey(3);
+        calc.pressNegativeKey();
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(9);
+        calc.pressNegativeKey();
+        calc.pressEqualsKey();
+
+        String expected = "27";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
     //TODO hier weitere Tests erstellen
 }
 
