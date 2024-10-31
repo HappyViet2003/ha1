@@ -106,6 +106,27 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    // Erster Roter Test von Viet Anh Hoenemann 587778
+    @Test
+    @DisplayName("should not completely reset the calculator after pressing the clear key once")
+    void testClearKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(4);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(5);
+        calc.pressClearKey();
+
+        calc.pressDigitKey(6);
+        calc.pressEqualsKey();
+
+        String expected = "10";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
     //TODO hier weitere Tests erstellen
 }
 
