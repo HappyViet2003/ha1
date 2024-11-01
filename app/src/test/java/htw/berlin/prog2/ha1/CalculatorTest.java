@@ -107,7 +107,7 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
-    // Erster Roter Test von Viet Anh Hoenemann 587778
+    // Erster Roter Test von Viet Anh Hoenemann 587778 -- Fixed
     @Test
     @DisplayName("should not completely reset the calculator after pressing the clear key once")
     void testClearKey() {
@@ -127,6 +127,23 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
-    //TODO hier weitere Tests erstellen
+    // Zweiter Roter Test von Viet Anh Hoenemann 587778
+    @Test
+    @DisplayName("should continue adding the last number after pressing the equals key multiple times")
+    void testMultipleEqualsKeys() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+        calc.pressEqualsKey();
+        calc.pressEqualsKey();
+
+        String expected = "7";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
