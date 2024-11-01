@@ -127,7 +127,7 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
-    // Zweiter Roter Test von Viet Anh Hoenemann 587778
+    // Zweiter Roter Test von Viet Anh Hoenemann 587778 -- Fixed
     @Test
     @DisplayName("should continue adding the last number after pressing the equals key multiple times")
     void testMultipleEqualsKeys() {
